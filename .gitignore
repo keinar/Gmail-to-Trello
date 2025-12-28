@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.venv/
+Scripts/
+Include/
+Lib/
+pyvenv.cfg
+
+# Secrets
+.env
+
+# Logs & Reports
+logs/
+allure-results/
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/

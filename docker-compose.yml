@@ -1,0 +1,13 @@
+services:
+  tests:
+    build: .
+    container_name: droxi_automation_task
+    ipc: host
+    env_file:
+      - .env
+    volumes:
+      - ./allure-results:/app/allure-results
+      - ./logs:/app/logs
+      - ./state.json:/app/state.json
+    ports:
+      - "5050:5050"
