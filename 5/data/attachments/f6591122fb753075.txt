@@ -1,0 +1,6 @@
+✅ Loading existing authentication state from state.json
+
+[INFO] Finding Urgent cards on board...
+[INFO] Found 2 cards.
+2025-12-29 08:50:52,849 - INFO - UIVerifier - ✅ Verified Urgent Card: Title='New' | Labels=['New', 'Urgent'] | Status='To Do'
+2025-12-29 08:50:52,861 - INFO - UIVerifier - ✅ Verified Urgent Card: Title='Urgent' | Labels=['Urgent'] | Status='In Progress'

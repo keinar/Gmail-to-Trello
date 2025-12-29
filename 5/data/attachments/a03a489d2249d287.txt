@@ -1,0 +1,2 @@
+INFO     BasePage:board_page.py:39 Attempting to open card: 'summarize the meeting'
+INFO     BasePage:base_page.py:23 Clicking element: [aria-label='Close dialog']
