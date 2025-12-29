@@ -1,0 +1,76 @@
+name: CI - Gmail to Trello Automation
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Create .env file
+        run: |
+          echo "TRELLO_API_KEY=${{ secrets.TRELLO_API_KEY }}" >> .env
+          echo "TRELLO_API_TOKEN=${{ secrets.TRELLO_API_TOKEN }}" >> .env
+          echo "TRELLO_BOARD_ID=${{ secrets.TRELLO_BOARD_ID }}" >> .env
+          echo "TRELLO_EMAIL=${{ secrets.TRELLO_EMAIL }}" >> .env
+          echo "TRELLO_PASSWORD=${{ secrets.TRELLO_PASSWORD }}" >> .env
+          echo "TRELLO_DEFAULT_LIST=To Do" >> .env
+
+      - name: Restore State JSON
+        run: |
+          echo '${{ secrets.TRELLO_STATE_JSON }}' > state.json
+
+      - name: Run Tests via Docker Compose
+        run: docker-compose up --build --exit-code-from tests
+
+      - name: Verify Reports Existence
+        if: always()
+        run: |
+          ls -R allure-results
+          sudo chmod -R 777 allure-results
+
+      - name: Load test report history
+        uses: actions/checkout@v3
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Build Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_reports: 20
+
+      - name: Deploy Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
+
+      - name: Upload Test Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-and-videos
+          path: |
+            logs/pytest-results.xml
+            allure-results/videos/
+            allure-results/login-video/

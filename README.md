@@ -1,5 +1,8 @@
 # Gmail-to-Trello Automation Sync
 
+[![CI - Gmail to Trello Automation](https://github.com/USERNAME/REPO_NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/USERNAME/REPO_NAME/actions/workflows/ci.yml)
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-View-orange)](https://USERNAME.github.io/REPO_NAME/)
+
 This project implements an automated synchronization system between a Mock Gmail Inbox and a Trello Board.
 It includes API verification logic and UI validation using Playwright.
 
@@ -88,6 +91,11 @@ To solve this, I implemented a **"Bring Your Own Cookie"** architecture using a 
 - Visually verifies "Urgent" cards.
 - Opens specific cards to validate merged content and descriptions in the modal view.
 
+### ⚠️ Note on API Logic Verification
+The test `test_verify_gmail_cards_synced_to_trello` is designed to validate the Trello board state against the Mock Data requirements.
+**Expected Result:** This test will **FAIL** (SoftAssert errors).
+**Reason:** The current state of the provided Trello board contains discrepancies (e.g., "Task:" prefixes not removed, missing cards) compared to the assignment requirements. The automation correctly identifies and reports these 14 bugs.
+
 ## Project Structure
 
 ```text
@@ -104,3 +112,5 @@ To solve this, I implemented a **"Bring Your Own Cookie"** architecture using a 
 ├── docker-compose.yml      # Container Orchestration
 ├── Dockerfile              # Environment Definition
 └── requirements.txt        # Python Dependencies
+
+- **`Manual Test Plan.pdf`**: Contains the manual testing strategy and test cases (Task 1).

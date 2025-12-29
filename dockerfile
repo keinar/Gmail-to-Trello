@@ -21,4 +21,4 @@ COPY . .
 
 RUN mkdir -p logs allure-results
 
-CMD sh -c "rm -rf allure-results/* && pytest --alluredir=allure-results --junitxml=/app/logs/pytest-results.xml || true && echo 'Generating Report...' && allure serve allure-results -p 5050 --host 0.0.0.0"
+CMD sh -c "rm -rf allure-results/* && pytest --alluredir=allure-results --junitxml=/app/logs/pytest-results.xml"
