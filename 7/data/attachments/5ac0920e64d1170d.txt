@@ -1,0 +1,3 @@
+2025-12-29 09:21:36,077 - INFO - BasePage - Attempting to open card: 'summarize the meeting'
+[DEBUG] Extracted UI Details: {'title': 'summarize the meeting', 'description': 'For all of us\nPlease do so', 'labels': ['New'], 'status': 'To Do'}
+2025-12-29 09:21:37,672 - INFO - BasePage - Clicking element: [aria-label='Close dialog']

@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"Locate all cards with 'Urgent' label and verify they are displayed correctly.","488","test_verify_urgent_cards_visualization[chromium]","tests.ui","Mon Dec 29 09:21:32 UTC 2025","passed","Mon Dec 29 09:21:32 UTC 2025","TestTrelloUI","test_ui_scenarios","",""
+"
+        Task 2: Validate sync logic using a dedicated Logic Verifier.
+        ","272","test_verify_gmail_cards_synced_to_trello","tests.api","Mon Dec 29 09:21:29 UTC 2025","failed","Mon Dec 29 09:21:29 UTC 2025","TestGmailTrelloSync","test_sync_logic","",""
+"Open 'summarize the meeting' card and validate deep details in the modal.","1766","test_verify_specific_card_content[chromium]","tests.ui","Mon Dec 29 09:21:36 UTC 2025","passed","Mon Dec 29 09:21:37 UTC 2025","TestTrelloUI","test_ui_scenarios","",""
