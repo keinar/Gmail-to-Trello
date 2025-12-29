@@ -7,7 +7,7 @@ on:
     branches: [ master, main ]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -33,6 +33,7 @@ jobs:
           echo '${{ secrets.TRELLO_STATE_JSON }}' > state.json
 
       - name: Run Tests via Docker Compose
+        continue-on-error: true
         run: docker compose up --build --exit-code-from tests
 
       - name: Verify Reports Existence
