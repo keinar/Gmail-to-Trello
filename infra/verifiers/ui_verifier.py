@@ -23,8 +23,21 @@ class UIVerifier:
         for index, card in enumerate(cards):
             card_text = card.inner_text()
             title = card_text.split('\n')[0]
+            label_elements = card.locator("[data-testid='compact-card-label']").all()
+            labels = []
+            for lbl in label_elements:
+                text = lbl.inner_text()
+                title_attr = lbl.get_attribute("title")
+                if text: 
+                    labels.append(text)
+                elif title_attr: 
+                    labels.append(title_attr)  
+            try:
+                status = card.locator("xpath=ancestor::div[@data-testid='list']").locator("[data-testid='list-name']").inner_text()
+            except Exception:
+                status = "Unknown"
             
-            is_visually_urgent = "Urgent" in card_text or "red" in card.inner_html()
+            is_visually_urgent = "Urgent" in card_text or "red" in card.inner_html() or "Urgent" in labels
             
             self.soft_assert.check(
                 is_visually_urgent,
@@ -32,7 +45,7 @@ class UIVerifier:
             )
             
             if is_visually_urgent:
-                logger.info(f"Card '{title}' verified as visually Urgent.")
+                logger.info(f"✅ Verified Urgent Card: Title='{title}' | Labels={labels} | Status='{status}'")
 
     @allure.step("Verify Card Modal Details")
     def verify_card_details(self, actual_details: Dict[str, any], expected_data: Dict[str, any]):

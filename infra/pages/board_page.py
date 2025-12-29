@@ -16,19 +16,6 @@ class BoardPage(BasePage):
     MODAL_LABELS_LIST = "[data-testid='card-label']"
     MODAL_COLUMN_STATUS = "button:has([data-testid='DownIcon'])"
 
-    def debug_print_modal_header(self):
-        """
-        Helper method to dump the HTML structure of the card modal header.
-        Use this to find the correct locator for the list name.
-        """
-        try:
-            header = self.page.locator(".window-header")
-            print("\n--- DEBUG: MODAL HEADER HTML ---")
-            print(header.inner_html())
-            print("--------------------------------\n")
-        except Exception as e:
-            print(f"Could not print header: {e}")
-
     @allure.step("Get all cards containing label: {label_text}")
     def get_cards_with_label(self, label_text: str) -> List[any]:
         """
@@ -72,7 +59,8 @@ class BoardPage(BasePage):
         if self.page.locator(self.MODAL_DESC_P).count() > 0:
             desc_text = self.page.locator(self.MODAL_DESC_P).inner_text()
         try:
-            status_element = self.page.locator(self.MODAL_COLUMN_STATUS).first
+            status_element = self.page.locator(self.MODAL_COLUMN_STATUS).nth(1)
+            status_element.wait_for(state="visible", timeout=2000)
             status_text = status_element.inner_text().strip()
         except Exception:
             logger.warning("Could not extract status using DownIcon locator.")
