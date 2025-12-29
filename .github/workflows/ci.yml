@@ -33,7 +33,7 @@ jobs:
           echo '${{ secrets.TRELLO_STATE_JSON }}' > state.json
 
       - name: Run Tests via Docker Compose
-        run: docker-compose up --build --exit-code-from tests
+        run: docker compose up --build --exit-code-from tests
 
       - name: Verify Reports Existence
         if: always()
