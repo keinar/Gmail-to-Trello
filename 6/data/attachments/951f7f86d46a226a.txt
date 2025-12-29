@@ -1,0 +1,2 @@
+INFO     UIVerifier:ui_verifier.py:48 ✅ Verified Urgent Card: Title='New' | Labels=['New', 'Urgent'] | Status='To Do'
+INFO     UIVerifier:ui_verifier.py:48 ✅ Verified Urgent Card: Title='Urgent' | Labels=['Urgent'] | Status='In Progress'

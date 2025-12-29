@@ -1,0 +1,19 @@
+[DEBUG] Loaded 26 raw messages from JSON.
+
+[INFO] Verifying 20 expected cards against 18 actual cards.
+2025-12-29 09:07:55,715 - INFO - SyncVerifier - Starting verification of existence and content...
+2025-12-29 09:07:55,716 - ERROR - SoftAssert - [FAILURE] CONTENT MISMATCH in 'Clean up mail': Expected text 'Please do so' missing.
+2025-12-29 09:07:55,716 - ERROR - SoftAssert - [FAILURE] [MISSING CARD] 'Coffee break' exists in Gmail but NOT in Trello.
+2025-12-29 09:07:55,716 - ERROR - SoftAssert - [FAILURE] [MISSING CARD] 'If you see it on board this is not good :(' exists in Gmail but NOT in Trello.
+2025-12-29 09:07:55,716 - ERROR - SoftAssert - [FAILURE] LABEL MISMATCH: 'Have a great year' expected 'Urgent' label.
+2025-12-29 09:07:55,717 - ERROR - SoftAssert - [FAILURE] CONTENT MISMATCH in 'Baking secrets': Expected text 'Do not miss it' missing.
+2025-12-29 09:07:55,717 - ERROR - SoftAssert - [FAILURE] CONTENT MISMATCH in 'Policy': Expected text 'A new policy is about to be released' missing.
+2025-12-29 09:07:55,717 - ERROR - SoftAssert - [FAILURE] [MISSING CARD] 'RND gathering' exists in Gmail but NOT in Trello.
+2025-12-29 09:07:55,717 - ERROR - SoftAssert - [FAILURE] [MISSING CARD] 'End of the month Task:' exists in Gmail but NOT in Trello.
+2025-12-29 09:07:55,718 - ERROR - SoftAssert - [FAILURE] CONTENT MISMATCH in 'Sync with the new employees': Expected text 'Please do so' missing.
+2025-12-29 09:07:55,718 - ERROR - SoftAssert - [FAILURE] [MISSING CARD] 'Celebrate the New Year' exists in Gmail but NOT in Trello.
+2025-12-29 09:07:55,718 - ERROR - SoftAssert - [FAILURE] [MISSING CARD] 'Hi! and welcome to your new environment' exists in Gmail but NOT in Trello.
+2025-12-29 09:07:55,718 - ERROR - SoftAssert - [FAILURE] [MISSING CARD] 'schedule some time for 1:1' exists in Gmail but NOT in Trello.
+2025-12-29 09:07:55,719 - ERROR - SoftAssert - [FAILURE] CONTENT MISMATCH in 'read the policies': Expected text 'Read the policies and confirm.' missing.
+2025-12-29 09:07:55,719 - INFO - SyncVerifier - Starting integrity check...
+2025-12-29 09:07:55,719 - ERROR - SoftAssert - [FAILURE] [BUG - DIRTY DATA] Found invalid card: 'Task: Have a great year'. Prefix should be removed.
