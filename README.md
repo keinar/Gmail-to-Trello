@@ -52,6 +52,28 @@ The easiest way to run the tests is using Docker, which sets up the environment,
     Once execution finishes, open your browser at:
     **http://localhost:5050**
 
+## 🔐 Authentication & 2FA Handling
+
+Since Trello employs strict security measures (2FA/MFA) and Bot detection, automated login within the Docker container might fail.
+To solve this, I implemented a **"Bring Your Own Cookie"** architecture using a local helper script.
+
+**Steps to generate a valid session:**
+1.  Ensure you have Python and Playwright installed locally:
+    ```bash
+    pip install playwright
+    playwright install chromium
+    ```
+2.  Run the helper script:
+    ```bash
+    python get_state_locally.py
+    ```
+3.  A browser window will open. **Log in manually** to Trello (perform 2FA if requested).
+4.  Once logged in, the script will automatically capture the session cookies, save them to `state.json`, and close.
+5.  Now you can run the Docker tests, and they will use this valid session:
+    ```bash
+    docker-compose up --build
+    ```
+
 ## Test Coverage
 
 ### Task 2: API & Logic Synchronization

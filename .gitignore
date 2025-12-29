@@ -11,6 +11,7 @@ pyvenv.cfg
 
 # Secrets
 .env
+state.json
 
 # Logs & Reports
 logs/
