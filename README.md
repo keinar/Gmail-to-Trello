@@ -28,7 +28,7 @@ The easiest way to run the tests is using Docker, which sets up the environment,
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repo-url>
+    git clone https://github.com/keinar/Gmail-to-Trello
     cd Gmail-to-Trello
     ```
 
@@ -37,9 +37,9 @@ The easiest way to run the tests is using Docker, which sets up the environment,
     ```env
     TRELLO_API_KEY=your_key_here
     TRELLO_API_TOKEN=your_token_here
-    TRELLO_BOARD_ID=2GzdgPlw
-    TRELLO_EMAIL=droxiautomation@gmail.com
-    TRELLO_PASSWORD=Droxi123456789
+    TRELLO_BOARD_ID=board_id_here
+    TRELLO_EMAIL=email_here
+    TRELLO_PASSWORD=password_here
     ```
 
 3.  **Run the tests:**
@@ -113,5 +113,6 @@ The test `test_verify_gmail_cards_synced_to_trello` is designed to validate the 
 ├── docker-compose.yml      # Container Orchestration
 ├── Dockerfile              # Environment Definition
 └── requirements.txt        # Python Dependencies
+```
 
 - **`Manual Test Plan.pdf`**: Contains the manual testing strategy and test cases (Task 1).
