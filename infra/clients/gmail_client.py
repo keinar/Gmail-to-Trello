@@ -2,7 +2,7 @@ import json
 import os
 import re
 from typing import List, Dict
-from infra.modals.cardModal import CardModal
+from infra.modals.card_modal import CardModal
 
 class GmailClient:
     def __init__(self, data_file_path: str):

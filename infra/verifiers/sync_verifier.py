@@ -1,6 +1,6 @@
 from typing import List
 import allure
-from infra.modals.cardModal import CardModal
+from infra.modals.card_modal import CardModal
 from infra.utils.soft_assert import SoftAssert
 from infra.utils.logger_setup import get_logger
 

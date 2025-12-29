@@ -1,7 +1,7 @@
 import requests
 import os
 from typing import List
-from infra.modals.cardModal import CardModal
+from infra.modals.card_modal import CardModal
 
 class TrelloClient:
     def __init__(self):
