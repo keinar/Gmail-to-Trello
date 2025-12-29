@@ -1,7 +1,8 @@
 # Gmail-to-Trello Automation Sync
 
-[![CI - Gmail to Trello Automation](https://github.com/USERNAME/REPO_NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/USERNAME/REPO_NAME/actions/workflows/ci.yml)
-[![Allure Report](https://img.shields.io/badge/Allure%20Report-View-orange)](https://USERNAME.github.io/REPO_NAME/)
+[![CI - Gmail to Trello Automation](https://github.com/keinar/Gmail-to-Trello/actions/workflows/ci.yml/badge.svg)](https://github.com/keinar/Gmail-to-Trello/actions/workflows/ci.yml)
+
+[![Allure Report](https://img.shields.io/badge/Allure%20Report-View-orange)](https://keinar.github.io/Gmail-to-Trello/)
 
 This project implements an automated synchronization system between a Mock Gmail Inbox and a Trello Board.
 It includes API verification logic and UI validation using Playwright.
